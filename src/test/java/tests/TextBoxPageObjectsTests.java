@@ -15,6 +15,7 @@ public class TextBoxPageObjectsTests extends TestBase {
         String permanentAddress = "street mrr";
 
         textBoxPage.openPage()
+                .removeBanner()
                 .setFullName(userName)
                 .setUserEmail(userEmail)
                 .setCurrentAddress(currentAddress)

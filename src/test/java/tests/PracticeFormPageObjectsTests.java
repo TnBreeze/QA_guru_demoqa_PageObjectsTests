@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import page.RegistrationPage;
 
 
-public class PracticePageObjectsTests extends TestBase {
+public class PracticeFormPageObjectsTests extends TestBase {
 
     private final RegistrationPage registrationPage = new RegistrationPage();
 
@@ -27,6 +27,7 @@ public class PracticePageObjectsTests extends TestBase {
 
 
         registrationPage.openPage()
+                .removeBanner()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setUserEmail(userEmail)
@@ -62,6 +63,7 @@ public class PracticePageObjectsTests extends TestBase {
         String userNumber = "9876283746";
 
         registrationPage.openPage()
+                .removeBanner()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setGender(gender)
@@ -76,7 +78,7 @@ public class PracticePageObjectsTests extends TestBase {
 
     @Test
     void negativeRegistrationTest() {
-        registrationPage.openPage().clickSubmit();
+        registrationPage.openPage().removeBanner().clickSubmit();
 
         registrationPage.negativeCheck();
     }
