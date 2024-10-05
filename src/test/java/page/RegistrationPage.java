@@ -5,7 +5,8 @@ import page.components.CalendarComponent;
 import page.components.ResultTableReg;
 
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationPage {
 
@@ -62,12 +63,12 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setSubjects(String value) {
-            subjectsInput.setValue(value).pressEnter();
+        subjectsInput.setValue(value).pressEnter();
         return this;
     }
 
     public RegistrationPage setHobbies(String value) {
-            hobbiesInput.$(byText(value)).click();
+        hobbiesInput.$(byText(value)).click();
         return this;
     }
 
